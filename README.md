@@ -5,7 +5,7 @@
 
 > **Level 4 Production-Ready MVP Submission** — A trustless, decentralized revenue distribution and milestone escrow portal for independent filmmakers, production houses, and crew members. Built on **Stellar Soroban smart contracts**.
 
-🔗 **Live Demo**: [https://filmsplit-dapp-5lkr6f7rc-elohimcom.vercel.app](https://filmsplit-dapp-5lkr6f7rc-elohimcom.vercel.app)
+🔗 **Live Demo**: [https://filmsplit-dapp.vercel.app](https://filmsplit-dapp.vercel.app)
 
 📹 **Demo Video**: _[Watch on Loom / YouTube]_
 
