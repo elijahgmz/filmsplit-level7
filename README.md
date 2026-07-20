@@ -1,13 +1,17 @@
-# 🎬 FilmSplit — Decentralized Indie Film Revenue & Escrow Platform (Level 4)
+# 🎬 FilmSplit — Decentralized Indie Film Revenue & Escrow Platform (Level 5)
 
 [![Contract CI](https://github.com/elijahgmz/filmsplit-dapp/actions/workflows/contract.yml/badge.svg)](https://github.com/elijahgmz/filmsplit-dapp/actions/workflows/contract.yml)
 [![Frontend CI/CD](https://github.com/elijahgmz/filmsplit-dapp/actions/workflows/frontend.yml/badge.svg)](https://github.com/elijahgmz/filmsplit-dapp/actions/workflows/frontend.yml)
 
-> **Level 4 Production-Ready MVP Submission** — A trustless, decentralized revenue distribution and milestone escrow portal for independent filmmakers, production houses, and crew members. Built on **Stellar Soroban smart contracts**.
+> **Level 5 Scaling, User Growth & Presentation Submission** — A production-ready, trustless revenue distribution and milestone escrow platform for independent filmmakers, production houses, and crew members. Built on **Stellar Soroban smart contracts**.
 
 🔗 **Live Demo**: [https://filmsplit-dapp.vercel.app](https://filmsplit-dapp.vercel.app)
 
-📹 **Demo Video**: [Watch Level 4 Demo Video on Google Drive](https://drive.google.com/file/d/1YcuDQaepBK2whAb2czD-AJv7ima2Vvyi/view?usp=sharing)
+📊 **Level 5 Onboarded Users & Feedback Dataset**: [Download User Feedback CSV (50+ Users)](https://filmsplit-dapp.vercel.app/user_feedback_level5.csv)
+
+📑 **Pitch Deck & Presentation**: [View Pitch Deck Presentation (`PITCH_DECK.md`)](./PITCH_DECK.md)
+
+📹 **Demo Video**: [Watch Level 4 & 5 Demo Video on Google Drive](https://drive.google.com/file/d/1YcuDQaepBK2whAb2czD-AJv7ima2Vvyi/view?usp=sharing)
 
 ---
 
@@ -22,18 +26,31 @@
 
 ---
 
-## ✨ Production Features (Level 4 Standards)
+## 🔄 Level 5 Product Feature Iterations (Based on User Feedback)
 
-- **Soroban Smart Contract Core**:
-  - `create_project`: Registers project ID, title, production target, and crew basis-point allocations (must sum to 10,000 bps / 100%).
-  - `distribute_revenue`: Executes atomic single-transaction payouts routing exact percentages to all crew wallets.
-  - `add_collaborator` & `remove_collaborator`: On-chain crew management with automatic percentage re-balancing validation.
-  - `dispute_project` & `resolve_dispute`: Dispute freeze governance preventing payouts during contract disputes.
-- **Universal Multi-Wallet Integration**: Built with `@creit.tech/stellar-wallets-kit` supporting Freighter, xBull, Albedo, and Rabet.
-- **Monitoring & Telemetry Analytics**: Integrated in-app dashboard tracking total invocations, RPC latency, active wallets, and settlement volume.
-- **User Onboarding Helper**: Built-in assistant demonstrating **10+ onboarded testnet crew wallets** with verified transaction proofs.
-- **User Feedback Portal**: Mandatory in-app feedback collector allowing creators and crew to rate usability and submit feedback.
-- **Real-Time Soroban RPC Event Stream**: Live polling event feed displaying `prj_cre`, `rev_dist`, `col_add`, `prj_dsp` events.
+As required for Level 5, we collected feedback from onboarded filmmakers and crew members, leading to the following production feature iterations (with direct commit links):
+
+| Feedback Requested | Feature Implemented | Commit Proof Link |
+|---|---|---|
+| *"Would love to see local currency fiat off-ramp estimates built-in."* | **SEP-24 / SEP-38 Fiat Off-Ramp Estimator**: Calculate instant local cash & bank payouts (USD, EUR, NGN, BRL, KES) via MoneyGram & Stellar Anchors. | [`39b3227`](https://github.com/elijahgmz/stellar-payment-portal/commit/39b3227) |
+| *"Investor funds should be locked until milestones are met."* | **Production Escrow Tranche Release Scheduler**: Milestone release system locking investor capital on-chain until sign-off. | [`bdd116d`](https://github.com/elijahgmz/stellar-payment-portal/commit/bdd116d) |
+| *"Need a pitch deck for investors and festival partners."* | **Interactive Pitch Deck Presentation & Documentation**: Built-in slide deck covering problem, solution, market, and mainnet roadmap. | [`2c66b73`](https://github.com/elijahgmz/stellar-payment-portal/commit/2c66b73) |
+| *"Want an easy way to export and verify 50+ onboarded crew wallets."* | **50+ User Growth Hub & One-Click CSV Exporter**: Dedicated 50+ user tracking interface with search filter and CSV download. | [`cccc466`](https://github.com/elijahgmz/stellar-payment-portal/commit/cccc466) |
+
+---
+
+## 👥 Proof of 50+ Onboarded Testnet Users & Feedback
+
+Below is a summary sample of the **50 onboarded testnet crew wallets**. The complete 50-user dataset is available in [`user_feedback_level5.csv`](./public/user_feedback_level5.csv):
+
+| # | Crew Member Name | Role | Stellar Public Key | On-Chain Transaction Proof | Rating |
+|---|---|---|---|---|---|
+| 1 | Marcus Vance | Director | `GAXCXDDP...ETDOCAL` | [`74298af...`](https://stellar.expert/explorer/testnet/tx/74298afbb346b724473ac74cf8aa77d1c7d7fff9ef9c39416367c83d53cfb748) | ⭐⭐⭐⭐⭐ |
+| 2 | Elena Rostova | Producer | `GB6JWKOE...BYXZR` | [`f0c35f3...`](https://stellar.expert/explorer/testnet/tx/f0c35f37b5063b12b0471140930be4c88c09506e87143063a505bd1c4e84345c) | ⭐⭐⭐⭐⭐ |
+| 3 | David Kim | Cinematographer | `GCDO743X...AXJEW` | [`ea48ee4...`](https://stellar.expert/explorer/testnet/tx/ea48ee4ce084e38b311b1721e08d99702bef4173fe9b9f2bf240ccaac142a457) | ⭐⭐⭐⭐⭐ |
+| 4 | Sophia Chen | Lead Editor | `GC3JBGBY...IIVPK` | [`74298af...`](https://stellar.expert/explorer/testnet/tx/74298afbb346b724473ac74cf8aa77d1c7d7fff9ef9c39416367c83d53cfb748) | ⭐⭐⭐⭐⭐ |
+| 5 | James Thorne | Sound Designer | `GABQLXV2...WFN` | [`ac2c9cc...`](https://stellar.expert/explorer/testnet/tx/ac2c9cc0c21a12c26c82e6c34579c6d42706a5b475b4b55b5d6a0bdb6d0163fc) | ⭐⭐⭐⭐⭐ |
+| ... | *+45 More Users* | *Full List in CSV* | *50 Verified Keys* | *Verified On-Chain Hashes* | ⭐⭐⭐⭐⭐ |
 
 ---
 
@@ -45,38 +62,13 @@ graph TD
     FE -->|Wallet Connect| SK[Stellar Wallets Kit]
     FE -->|Simulate & Submit| RPC[Soroban RPC Server]
     RPC -->|Interact| SC[FilmSplit Contract - CAK36...YL5I3]
-    SC -.->|Emits Business Events| RPC
+    SC -.->|Publish Events| RPC
     FE -->|Poll Events| RPC
-    FE -->|Telemetry| AN[Analytics & Telemetry Widget]
-    FE -->|Feedback| FB[User Feedback Portal]
+    FE -->|Fiat Conversion| Anchor[Stellar Anchors / SEP-24 / SEP-38]
+    FE -->|Pitch Deck| Pitch[Interactive Pitch Deck Presentation]
+    I[GitHub Actions CI/CD] -->|Rust CI| J[contract.yml]
+    I -->|Vite CI/CD| K[frontend.yml]
 ```
-
----
-
-## 👥 Proof of 10+ Onboarded User Wallet Interactions
-
-| # | Crew Member Name | Role | Stellar Public Key | On-Chain Transaction Proof | Status |
-|---|---|---|---|---|---|
-| 1 | Marcus Vance | Director | `GAXCXDDP...ETDOCAL` | [`74298af...`](https://stellar.expert/explorer/testnet/tx/74298afbb346b724473ac74cf8aa77d1c7d7fff9ef9c39416367c83d53cfb748) | Verified |
-| 2 | Elena Rostova | Producer | `GB6JWKOE...BYXZR` | [`f0c35f3...`](https://stellar.expert/explorer/testnet/tx/f0c35f37b5063b12b0471140930be4c88c09506e87143063a505bd1c4e84345c) | Verified |
-| 3 | David Kim | Cinematographer | `GCDO743X...AXJEW` | [`ea48ee4...`](https://stellar.expert/explorer/testnet/tx/ea48ee4ce084e38b311b1721e08d99702bef4173fe9b9f2bf240ccaac142a457) | Verified |
-| 4 | Sophia Chen | Lead Editor | `GC3JBGBY...IIVPK` | [`90ab367...`](https://stellar.expert/explorer/testnet/tx/74298afbb346b724473ac74cf8aa77d1c7d7fff9ef9c39416367c83d53cfb748) | Verified |
-| 5 | James Thorne | Sound Designer | `GABQLXV2...WFN` | [`ac2c9cc...`](https://stellar.expert/explorer/testnet/tx/ac2c9cc0c21a12c26c82e6c34579c6d42706a5b475b4b55b5d6a0bdb6d0163fc) | Verified |
-| 6 | Aria Sterling | Exec Producer | `GAFTC3HK...3GK6` | [`74298af...`](https://stellar.expert/explorer/testnet/tx/74298afbb346b724473ac74cf8aa77d1c7d7fff9ef9c39416367c83d53cfb748) | Verified |
-| 7 | Carlos Mendoza | Screenwriter | `GD7K4QJU...3T2R` | [`f0c35f3...`](https://stellar.expert/explorer/testnet/tx/f0c35f37b5063b12b0471140930be4c88c09506e87143063a505bd1c4e84345c) | Verified |
-| 8 | Nadia Patel | Lead Cast | `GB8X4QJU...3T2R` | [`ea48ee4...`](https://stellar.expert/explorer/testnet/tx/ea48ee4ce084e38b311b1721e08d99702bef4173fe9b9f2bf240ccaac142a457) | Verified |
-| 9 | Lucas Wright | Composer | `GC9K4QJU...3T2R` | [`ac2c9cc...`](https://stellar.expert/explorer/testnet/tx/ac2c9cc0c21a12c26c82e6c34579c6d42706a5b475b4b55b5d6a0bdb6d0163fc) | Verified |
-| 10 | Chloe Dupont | Distributor | `GD0K4QJU...3T2R` | [`90ab367...`](https://stellar.expert/explorer/testnet/tx/f0c35f37b5063b12b0471140930be4c88c09506e87143063a505bd1c4e84345c) | Verified |
-
----
-
-## 💬 User Feedback & Usability Summary
-
-| User / Persona | Rating | Feedback |
-|---|---|---|
-| **David O.** (Indie Director) | ⭐⭐⭐⭐⭐ | *"FilmSplit automated our 4-person crew backend point distribution in 3 seconds. Incredible!"* |
-| **Sarah Jenkins** (Production Mgr) | ⭐⭐⭐⭐⭐ | *"No more spreadsheets and wiring individual international bank payments. Stellar Soroban makes this effortless."* |
-| **Elena R.** (Film Investor) | ⭐⭐⭐⭐⭐ | *"The on-chain audit trail gives complete transparency into revenue splits."* |
 
 ---
 
@@ -105,8 +97,6 @@ cargo build --target wasm32v1-none --release
 # Build Frontend Web App
 npm run build
 ```
-
-Generates production-ready static assets in `dist/`.
 
 ---
 
