@@ -7,7 +7,7 @@
 
 🔗 **Live Demo**: [https://filmsplit-dapp.vercel.app](https://filmsplit-dapp.vercel.app)
 
-📹 **Demo Video**: _[Watch on Loom / YouTube]_
+📹 **Demo Video**: [Watch Demo Video on Google Drive](https://drive.google.com/file/d/1VE345hZa3kMKrBGqh7zKE76dqkk1Rpa9/view?usp=sharing)
 
 ---
 
