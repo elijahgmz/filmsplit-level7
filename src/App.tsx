@@ -15,6 +15,9 @@ import { OnboardingHelper } from "./components/OnboardingHelper";
 import { FiatRampEstimator } from "./components/FiatRampEstimator";
 import { MilestoneScheduler } from "./components/MilestoneScheduler";
 import { PitchDeckModal } from "./components/PitchDeckModal";
+import { MultiSigModal } from "./components/MultiSigModal";
+import { FeeSponsorshipWidget } from "./components/FeeSponsorshipWidget";
+import { SecurityAuditModal } from "./components/SecurityAuditModal";
 
 import { Film, Plus, Coins, Users, AlertTriangle, CheckCircle, ExternalLink, RefreshCw, Sparkles, Lock, ArrowUpRight } from "lucide-react";
 
@@ -86,6 +89,7 @@ export default function App() {
   const [feedbackList, setFeedbackList] = useState<FeedbackItem[]>(INITIAL_FEEDBACK);
 
   // UI Modal & Navigation State
+  const [network, setNetwork] = useState<"mainnet" | "testnet">("mainnet");
   const [activeSection, setActiveSection] = useState<string>("projects");
   const [showCreateModal, setShowCreateModal] = useState(false);
   const [showDistributeModal, setShowDistributeModal] = useState(false);
@@ -94,6 +98,7 @@ export default function App() {
   const [showFeedbackModal, setShowFeedbackModal] = useState(false);
   const [showOnboardingModal, setShowOnboardingModal] = useState(false);
   const [showPitchDeckModal, setShowPitchDeckModal] = useState(false);
+  const [showSecurityAuditModal, setShowSecurityAuditModal] = useState(false);
 
   // Status & Feedback
   const [actionLoading, setActionLoading] = useState(false);
@@ -430,8 +435,11 @@ export default function App() {
         onOpenFeedback={() => setShowFeedbackModal(true)}
         onOpenOnboarding={() => setShowOnboardingModal(true)}
         onOpenPitchDeck={() => setShowPitchDeckModal(true)}
+        onOpenSecurityAudit={() => setShowSecurityAuditModal(true)}
         activeSection={activeSection}
         setActiveSection={setActiveSection}
+        network={network}
+        setNetwork={setNetwork}
       />
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -483,6 +491,8 @@ export default function App() {
         />
 
         {/* Active Section Feature Rendering */}
+        <FeeSponsorshipWidget />
+        {activeSection === "multisig" && <MultiSigModal />}
         {activeSection === "escrow" && <MilestoneScheduler />}
         {activeSection === "fiat" && <FiatRampEstimator />}
 
@@ -727,6 +737,10 @@ export default function App() {
 
       {showPitchDeckModal && (
         <PitchDeckModal onClose={() => setShowPitchDeckModal(false)} />
+      )}
+
+      {showSecurityAuditModal && (
+        <SecurityAuditModal onClose={() => setShowSecurityAuditModal(false)} />
       )}
     </div>
   );

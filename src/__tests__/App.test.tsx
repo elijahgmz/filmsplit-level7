@@ -6,8 +6,8 @@ import App from "../App";
 describe("FilmSplit Level 4 dApp Frontend", () => {
   test("renders the brand title and logo", () => {
     render(<App />);
-    const title = screen.getByText(/FilmSplit/i);
-    expect(title).toBeInTheDocument();
+    const titleElements = screen.getAllByText(/FilmSplit/i);
+    expect(titleElements[0]).toBeInTheDocument();
   });
 
   test("renders connect wallet button and Stellar Testnet badge", () => {
